@@ -4,8 +4,19 @@ const ImageSearch = ({searchText}) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(text);
     searchText(text);
+    
   };
+  const handleClick=(e) => {
+    e.preventDefault();
+    if (text.trim().length !== 0) {
+      console.log('input value is NOT empty');
+    } else {
+      console.log('input value is empty');
+    }
+  }
+
 
   return (
     <div className="max-w-fit md:max-w-sm rounded overflow-hidden my-10 mx-auto">
@@ -17,7 +28,7 @@ const ImageSearch = ({searchText}) => {
             type="text"
             placeholder="Search Image"
           />
-          <button
+          <button 
             className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
             type="submit"
           >
